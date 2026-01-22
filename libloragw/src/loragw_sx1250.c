@@ -96,6 +96,8 @@ int sx1250_calibrate(uint8_t rf_chain, uint32_t freq_hz) {
     buff[0] = 0x00;
     err |= sx1250_reg_r(GET_STATUS, buff, 1, rf_chain);
 
+    printf("INFO: sx1250_calibrate: rf_chain=%d, freq_hz=%d\n", rf_chain, freq_hz);
+
     /* Run calibration */
     if ((freq_hz > 300E6) && (freq_hz < 440E6)) {
         buff[0] = 0x6B;
