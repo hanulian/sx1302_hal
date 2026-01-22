@@ -276,7 +276,7 @@ int sx1261_calibrate(uint32_t freq_hz) {
     CHECK_ERR(err);
 
     /* Run calibration */
-   if ((300E6 < freq_hz) && (freq_hz < 330E6)) {
+   if ((315E6 < freq_hz) && (freq_hz < 320E6)) {
         buff[0] = 0x6B;
         buff[1] = 0x6F;
     } else 
